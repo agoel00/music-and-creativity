@@ -1,43 +1,26 @@
-# Divergent Association Task code
+# Music and Creativity
 
-The DAT measures creativity in under 4 minutes. It involves thinking of 10
-unrelated words. Creative people choose words with greater semantic distances
-between them.
-
-See our manuscript in *PNAS* titled
-[Naming unrelated words predicts creativity](https://www.pnas.org/content/118/25/e2022340118)
-for more details.
-
-## Online version
-
-Try the task and see your score at
-[datcreativity.com](https://www.datcreativity.com).
+Investigating the relationship between music and (verbal) creativity across two dimensions - divergent and convergent.
 
 ## Installation
 
 1. Clone this code:
 
-    - `git clone https://github.com/jayolson/divergent-association-task.git`
+    - `git clone https://github.com/agoel00/music-and-creativity.git`
 
 2. Install [Python 3](https://www.python.org) and [pip](https://pypi.org/project/pip/).
 
 3. Download the dependencies and model:
 
-    - `make install` on Unix-like systems
+    - `pip3 install --user numpy scipy`
 
-    - or else:
-
-        - `pip3 install --user numpy scipy`
-
-        - Download and extract glove.840B.300d.zip from <https://nlp.stanford.edu/projects/glove/>
+    - Download and extract glove.840B.300d.zip from <https://nlp.stanford.edu/projects/glove/>
 
 4. Try it:
 
-    - `python3 examples.py`
+    - `python3 run.py`
 
 ## Examples
-
-See examples.py:
 
 ```python
 import dat
@@ -65,20 +48,15 @@ high = ["hippo", "jumper", "machinery", "prickle", "tickets", "tomato", "violin"
 print(model.dat(low)) # 50
 print(model.dat(average)) # 78
 print(model.dat(high)) # 95
+
+# Compute the RAT score
+print(model.rat(low))
 ```
 
-## Data
-
-For open data (8,900 participants from 98 countries), see
-<https://osf.io/kbeq6/>.
 
 ## Credits
 
-By [Jay Olson](https://www.jayolson.org) at Harvard University.
+This repo is a modification of the original code by [Jay Olson](https://www.jayolson.org) at Harvard University.
 
 The dictionary (words.txt) is based on [Hunspell](https://hunspell.github.io)
 by László Németh.
-
-## License
-
-MIT
