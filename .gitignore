@@ -1,4 +1,5 @@
 __pycache__
 glove.840B.300d.txt
-.DS_Store/
+.DS_Store
+data/
 
